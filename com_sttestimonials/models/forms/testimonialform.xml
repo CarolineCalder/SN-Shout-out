@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="utf-8"?>
+<form>
+	<fieldset>
+
+        <field name="id"
+			type="text"
+			default="0"
+			label="COM_STTESTIMONIALS_FORM_LBL_TESTIMONIAL_ID"
+			readonly="true"
+			class="readonly"
+			description="JGLOBAL_FIELD_ID_DESC"
+		/> 
+
+ 
+		<field name="testimonial"
+			type="editor"
+			label="COM_STTESTIMONIALS_FORM_LBL_TESTIMONIAL_TESTIMONIAL"
+			description="COM_STTESTIMONIALS_FORM_DESC_TESTIMONIAL_TESTIMONIAL" 
+			hint="COM_STTESTIMONIALS_FORM_LBL_TESTIMONIAL_TESTIMONIAL"
+			required="true" 
+			menu_published="0"
+			filter="safehtml"
+			directory_stripext="true"
+			directory_hidenode="true"
+			directory_hidedefault="true"
+			heading="h4"
+			close="true"
+			option_on="Yes"
+			option_off="Yes"
+			toggle_default_value="0"
+		>
+			<group label="">
+				<option value=""></option>
+			</group>
+		 </field> 
+		 
+		 <field name="rating" type="hidden"
+                
+            label="COM_STTESTIMONIALS_FORM_LBL_TESTIMONIAL_RATING"
+            description="COM_STTESTIMONIALS_FORM_DESC_TESTIMONIAL_RATING" 
+            required="true" 
+            filter="float"
+            maxlength="10" 
+        > 
+        	<group label="">
+				<option value=""></option>
+			</group>
+		 </field> 
+
+ 
+		<field name="author"
+			type="text"
+			label="COM_STTESTIMONIALS_FORM_LBL_TESTIMONIAL_AUTHOR"
+			description="COM_STTESTIMONIALS_FORM_DESC_TESTIMONIAL_AUTHOR" 
+			hint="COM_STTESTIMONIALS_FORM_LBL_TESTIMONIAL_AUTHOR"
+			required="true" 
+			menu_published="0"
+			filter="string"
+			directory_stripext="true"
+			directory_hidenode="true"
+			directory_hidedefault="true"
+			heading="h4"
+			close="true"
+			maxlength="255"
+			option_on="Yes"
+			option_off="Yes"
+			toggle_default_value="0"
+		>
+			<group label="">
+				<option value=""></option>
+			</group>
+		 </field> 
+
+ 
+		<field name="author_credentials"
+			type="text"
+			label="COM_STTESTIMONIALS_FORM_LBL_TESTIMONIAL_AUTHOR_CREDENTIALS"
+			description="COM_STTESTIMONIALS_FORM_DESC_TESTIMONIAL_AUTHOR_CREDENTIALS" 
+			hint="COM_STTESTIMONIALS_FORM_LBL_TESTIMONIAL_AUTHOR_CREDENTIALS"
+		>
+			<group label="">
+				<option value=""></option>
+			</group>
+		 </field> 
+
+ 
+		<field name="author_pic"
+			type="FileMultiple"
+			label="COM_STTESTIMONIALS_FORM_LBL_TESTIMONIAL_AUTHOR_PIC"
+			description="COM_STTESTIMONIALS_FORM_DESC_TESTIMONIAL_AUTHOR_PIC" 
+			hint="COM_STTESTIMONIALS_FORM_LBL_TESTIMONIAL_AUTHOR_PIC"
+			menu_published="0"
+			filter="raw"
+			directory_stripext="true"
+			directory_hidenode="true"
+			directory_hidedefault="true"
+			upload_directory="media/com_sttestimonials/uploads"
+			accept="image/png,image/jpg,image/jpeg,image/gif"
+			heading="h4"
+			close="true"
+			max_size="1"
+			option_on="Yes"
+			option_off="Yes"
+			toggle_default_value="0"
+		>
+			<group label="">
+				<option value=""></option>
+			</group>
+		 </field> 
+
+ 
+		<field name="url"
+			type="url"
+			label="URL"
+			description="[Optional] URL of the testimonial author, e.g. personal or company website."
+			validate="url"
+		/> 
+
+ 
+		<field name="date"
+			type="calendar"
+			label="COM_STTESTIMONIALS_FORM_LBL_TESTIMONIAL_DATE"
+			description="COM_STTESTIMONIALS_FORM_DESC_TESTIMONIAL_DATE" 
+			hint="COM_STTESTIMONIALS_FORM_LBL_TESTIMONIAL_DATE"
+			default="NOW" 
+			required="true" 
+			menu_published="0"
+			filter="raw"
+			directory_stripext="true"
+			directory_hidenode="true"
+			directory_hidedefault="true"
+			heading="h4"
+			close="true"
+			option_on="Yes"
+			option_off="Yes"
+			toggle_default_value="0"
+		>
+			<group label="">
+				<option value=""></option>
+			</group>
+		 </field> 
+
+ 
+		<field name="created_by"
+			type="createdby"
+			default=""
+			label="COM_STTESTIMONIALS_FORM_LBL_TESTIMONIAL_CREATED_BY"
+			description="COM_STTESTIMONIALS_FORM_DESC_TESTIMONIAL_CREATED_BY" 
+			hint="COM_STTESTIMONIALS_FORM_LBL_TESTIMONIAL_CREATED_BY"
+		/> 
+
+ 
+		<field name="modified_by"
+			type="modifiedby"
+			default=""
+			label="COM_STTESTIMONIALS_FORM_LBL_TESTIMONIAL_MODIFIED_BY"
+			description="COM_STTESTIMONIALS_FORM_DESC_TESTIMONIAL_MODIFIED_BY" 
+			hint="COM_STTESTIMONIALS_FORM_LBL_TESTIMONIAL_MODIFIED_BY"
+		/> 
+
+ 
+		<field name="state"
+			type="list"
+			label="JSTATUS"
+			description="JFIELD_PUBLISHED_DESC"
+			class="inputbox"
+			size="1"
+			default="1"
+		>
+			<option value="1">JPUBLISHED</option>
+			<option value="0">JUNPUBLISHED</option>
+			<option value="2">JARCHIVED</option>
+			<option value="-2">JTRASHED</option>
+		</field> 
+
+ 
+		<field name="checked_out"
+			type="hidden"
+			filter="unset"
+		/>
+
+		<field name="checked_out_time"
+			type="hidden"
+			filter="unset"
+		/> 
+
+ 
+	</fieldset>
+
+	<fieldset name="accesscontrol">
+		<field name="asset_id"
+			type="hidden"
+			filter="unset"
+		/>
+
+		<field name="rules"
+			type="rules"
+			label="JFIELD_RULES_LABEL"
+			translate_label="false"
+			filter="rules"
+			validate="rules"
+			class="inputbox"
+			component="com_sttestimonials"
+			section="testimonial"
+		/>
+
+	</fieldset>
+
+</form>

@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="module" method="upgrade" client="site">
+	<name>MOD_ST_TESTIMONIAL_SLIDER</name>
+	<creationDate>Oct 2016</creationDate>
+	<author>Sopan Technologies</author>
+	<authorEmail>info@sopantech.com</authorEmail>
+	<authorUrl>http://www.sopantech.com</authorUrl>
+	<copyright>Copyright © 2016 - All rights reserved.</copyright>
+	<license>GNU General Public License version 2 or later</license>
+	<version>1.0.3</version>
+	<description>MOD_ST_TESTIMONIAL_SLIDER_DESCRIPTION</description>
+	<files>
+		<filename module="mod_sttestimonials">mod_sttestimonials.php</filename>
+		<filename>mod_sttestimonials.xml</filename>
+		<filename>index.html</filename>
+		<folder>language</folder>
+		<folder>tmpl</folder>
+		<folder>assets</folder>
+		<folder>plugins</folder>
+		<folder>lib</folder>
+	</files>
+	<config>
+		<fields name="params">
+			<fieldset name="basic">
+				<field name="load_jquery" type="radio" default="0" label="Load jQuery?" description="Enable this only if your Joomla site template does not include jQuery already." class="btn-group btn-group-yesno">
+				  <option value="1">JYES</option>
+				  <option value="0">JNO</option>
+				</field>
+				<field name="strip_html" type="radio" default="0" label="Remove HTML?" description="Remove HTML tags from testimonial text?" class="btn-group btn-group-yesno">
+				  <option value="1">JYES</option>
+				  <option value="0">JNO</option>
+				</field>
+				<field name="text_limit" type="text" default="0" label="Testimonial Limit (in words)" description="Limit testimonial text by specifying number of words to be shown in module. 0 means no limit." />
+				<field name="display_rating" type="radio" default="1" label="Display Rating?" description="Would you like to display testimonial rating?" class="btn-group btn-group-yesno">
+				  <option value="1">JYES</option>
+				  <option value="0">JNO</option>
+				</field>
+				<field name="display_image" type="radio" default="1" label="Display Author Image?" description="Would you like to display testimonial author image, if exists?" class="btn-group btn-group-yesno">
+				  <option value="1">JYES</option>
+				  <option value="0">JNO</option>
+				</field>
+				<field name="display_author_creds" type="radio" default="1" label="Display Author Credentials?" description="Would you like to display testimonial author credentials, if exists?" class="btn-group btn-group-yesno">
+				  <option value="1">JYES</option>
+				  <option value="0">JNO</option>
+				</field>
+				<field name="display_url" type="radio" default="0" label="Display Author URL?" description="Would you like to display testimonial author URL, if exists?" class="btn-group btn-group-yesno">
+				  <option value="1">JYES</option>
+				  <option value="0">JNO</option>
+				</field>
+				<field name="display_date" type="radio" default="0" label="Display Testimonial Date?" description="Would you like to display testimonial date?" class="btn-group btn-group-yesno">
+				  <option value="1">JYES</option>
+				  <option value="0">JNO</option>
+				</field>
+				<field name="link_url" type="radio" default="1" label="Link URL with Author Name?" description="Would you like to link the URL with author name instead of showing it separately? Note that this works irrespective of whether you have set display URL to Yes or No." class="btn-group btn-group-yesno">
+				  <option value="1">JYES</option>
+				  <option value="0">JNO</option>
+				</field>
+				<field name="accent" type="color" default="#ccc" label="Quote Accent Color" description="Accent color for the testimonial block quotes" size="10" />
+			</fieldset>
+			<fieldset name="advanced">
+				<field
+					name="layout"
+					type="modulelayout"
+					default="default"
+					label="JFIELD_ALT_LAYOUT_LABEL"
+					description="JFIELD_ALT_MODULE_LAYOUT_DESC" />
+
+				<field
+					name="moduleclass_sfx"
+					type="textarea" rows="3"
+					label="COM_MODULES_FIELD_MODULECLASS_SFX_LABEL"
+					description="COM_MODULES_FIELD_MODULECLASS_SFX_DESC" />
+
+				<field
+					name="cache"
+					type="list"
+					default="1"
+					label="COM_MODULES_FIELD_CACHING_LABEL"
+					description="COM_MODULES_FIELD_CACHING_DESC">
+					<option
+						value="1">JGLOBAL_USE_GLOBAL</option>
+					<option
+						value="0">COM_MODULES_FIELD_VALUE_NOCACHING</option>
+				</field>
+
+				<field
+					name="cache_time"
+					type="text"
+					default="900"
+					label="COM_MODULES_FIELD_CACHE_TIME_LABEL"
+					description="COM_MODULES_FIELD_CACHE_TIME_DESC" />
+				<field
+					name="cachemode"
+					type="hidden"
+					default="static">
+					<option
+						value="static"></option>
+				</field>
+			</fieldset>
+			<fieldset name="configuration" label="MOD_CONFIGURATION" description="">
+				<field name="general" type="note" label="General Slider Settings" />
+				<field name="responsive" type="radio" default="1" label="Responsive Slider?" description="Enable or disable auto resize of the slider. Useful if you need to use fixed width sliders." class="btn-group btn-group-yesno">
+				  <option value="1">JYES</option>
+				  <option value="0">JNO</option>
+				</field>
+				<field name="touchEnabled" type="radio" default="1" label="Touch Enabled?" description="If yes, slider will allow touch swipe transitions" class="btn-group btn-group-yesno">
+				  <option value="1">JYES</option>
+				  <option value="0">JNO</option>
+				</field>
+				<field type="list" label="Mode" name="mode" description="Type of transition between slides" value="" default="horizontal">
+					<option value="horizontal">Horizontal</option>
+  					<option value="vertical">Vertical</option>
+  					<option value="fade">Fade</option>
+				</field>
+				<field name="speed" type="text" default="500" label="Speed" description="Slide transition duration (in ms)" size="10" />
+				<field name="slideMargin" type="text" default="0" label="Slide Margin" description="Margin between each slide" size="10" />
+				<field name="startSlide" type="text" default="0" label="Starting Slide" description="Starting slide index (zero-based)" size="10" />
+				<field name="randomStart" type="radio" default="0" label="Randomize?" description="Start slider on a random slide" class="btn-group btn-group-yesno">
+				  <option value="1">JYES</option>
+				  <option value="0">JNO</option>
+				</field>
+				<field name="infiniteLoop" type="radio" default="1" label="Infine Loop?" description="If yes, clicking 'Next' while on the last slide will transition to the first slide and vice-versa" class="btn-group btn-group-yesno">
+				  <option value="1">JYES</option>
+				  <option value="0">JNO</option>
+				</field>
+				<field name="adaptiveHeight" type="radio" default="0" label="Adaptive Height?" description="Dynamically adjust slider height based on each slide's height" class="btn-group btn-group-yesno">
+				  <option value="1">JYES</option>
+				  <option value="0">JNO</option>
+				</field>
+				
+				<field name="pager-settings" type="note" label="Pagination Settings" />
+				<field name="pager" type="radio" default="1" label="Show Pagination?" description="If yes, a pager will be added" class="btn-group btn-group-yesno">
+				  <option value="1">JYES</option>
+				  <option value="0">JNO</option>
+				</field>
+				<field type="list" label="Pagination Type" name="pagerType" description="If 'full', a pager link will be generated for each slide. If 'short', a x / y pager will be used (ex. 1 / 5)" value="" default="full">
+					<option value="full">Full</option>
+  					<option value="short">Short</option>
+				</field>
+				<field name="pagerShortSeparator" type="text" default="/" label="Pagination Separator" description="If pagination type is set to 'short', pager will use this value as the separating character" size="10" />
+				
+				<field name="control-settings" type="note" label="Controls Settings" />
+				<field name="controls" type="radio" default="0" label="Show Controls?" description="If yes, 'Next' / 'Prev' controls will be added" class="btn-group btn-group-yesno">
+				  <option value="1">JYES</option>
+				  <option value="0">JNO</option>
+				</field>
+				<field name="auto" type="radio" default="0" label="Auto Start?" description="Slides will automatically transition" class="btn-group btn-group-yesno">
+				  <option value="1">JYES</option>
+				  <option value="0">JNO</option>
+				</field>
+				<field name="pause" type="text" default="4000" label="Pause between Auto-Transition" description="The amount of time (in ms) between each auto transition" size="10" />
+				
+				<field name="carousel" type="note" label="Carousel Settings" />
+				<field name="minSlides" type="text" default="1" label="Minimum no. of Testimonials" description="The minimum number of testimonials to be shown. Testimonials will be sized down if carousel becomes smaller than the original size." size="10" />
+				<field name="maxSlides" type="text" default="1" label="Maximum no. of Testimonials" description="The maximum number of testimonials to be shown. Testimonials will be sized up if carousel becomes larger than the original size." size="10" />
+				<field name="moveSlides" type="text" default="0" label="No. of Testimonials to be Moved" description="The number of testimonials to move on transition. This value must be more than no. of minimum testimonials, and less than no. of maximum testimonials. If zero (default), the number of fully-visible slides will be used." size="10" />
+				<field name="slideWidth" type="text" default="0" label="Slider Width" description="The width of each testimonial. This setting is required for all horizontal carousels! This must be set for showing more than one testimonial in the slider." size="10" />
+				<field name="swnote" type="note" description="&lt;span style='color:red;'&gt;Note that slider width must be set to greater than zero, i.e. 300, if you want to show more than one testimonial at once.&lt;/span&gt;" />
+			</fieldset>
+		</fields>
+	</config> 
+	<languages folder="language">
+		<language tag="en-GB">en-GB/en-GB.mod_sttestimonials.sys.ini</language>
+		<language tag="en-GB">en-GB/en-GB.mod_sttestimonials.ini</language>
+	</languages>
+</extension>
